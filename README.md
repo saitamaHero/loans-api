@@ -29,7 +29,7 @@ To get started with this project, follow these steps:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/saitamaHero/api-nest-loans.git
+   git clone https://github.com/saitamaHero/loans-api.git
 
    cd api-nest-loans
    ```
