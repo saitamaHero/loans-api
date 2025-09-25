@@ -17,10 +17,6 @@
 - [Database Structure](#database-structure)
 - [Running the Project](#running-the-project)
 - [Testing](#testing)
-- [Resources](#resources)
-- [Support](#support)
-- [Stay in Touch](#stay-in-touch)
-- [License](#license)
 
 ## Description
 
