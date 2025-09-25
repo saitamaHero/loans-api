@@ -5,25 +5,28 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { LoansModule } from './loans/loans.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './users/entities/user.entity';
-import { Amortization } from './loans/amortizations/entities/amortization.entity';
-import { Loan } from './loans/entities/loan.entity';
-import { Payment } from './loans/entities/payment.entity';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
     UsersModule,
     AuthModule,
     LoansModule,
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'dionicio',
-      password: '',
-      database: 'loans_test',
-      entities: [User, Loan, Amortization, Payment],
-      synchronize: true, // Set to false in production
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule], // Import the ConfigModule
+      inject: [ConfigService], // Inject the ConfigService to use it below
+      useFactory: (configService: ConfigService) => ({
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        type: configService.get<any>('DB_TYPE'),
+        host: configService.get<string>('DB_HOST'),
+        port: configService.get<number>('DB_PORT'),
+        username: configService.get<string>('DB_USERNAME'),
+        password: configService.get<string>('DB_PASSWORD'),
+        database: configService.get<string>('DB_NAME'),
+        entities: [__dirname + '/**/*.entity{.ts,.js}'],
+        synchronize: configService.get<string>('NODE_ENV') !== 'production',
+      }),
     }),
   ],
   controllers: [AppController],
