@@ -97,3 +97,7 @@ npm run start
 # watch mode
 npm run start:dev
 ```
+
+## Testing
+
+The test suites are broken at the moment of the last update. This is something the I'm working on to improve code quality and make sure the changes are not broken as the code grows.
