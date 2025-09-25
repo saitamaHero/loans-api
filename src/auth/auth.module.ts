@@ -13,7 +13,7 @@ import { HashingModule } from './hashing/hashing.module';
     UsersModule,
     JwtModule.register({
       global: true,
-      signOptions: { expiresIn: '24h' },
+      signOptions: { expiresIn: jwtConstants.expiresIn },
       secret: jwtConstants.secret,
     }),
     HashingModule,
