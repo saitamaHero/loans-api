@@ -5,7 +5,7 @@
 <h1 align="center">API Nest Loans</h1>
 
 <p align="center">
-<a href="https://app.swaggerhub.com/apis/1111172/BANFONDESA-Loans-API/1.0.0">
+<a href="https://app.swaggerhub.com/apis-docs/1111172/BANFONDESA-Loans-API/1.0.0">
   <img src="https://img.shields.io/badge/SwaggerHub-v1.0.0-blue.svg" alt="SwaggerHub v1.0.0 Badge">
 </a>
 </p>
