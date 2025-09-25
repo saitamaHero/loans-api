@@ -49,7 +49,7 @@ To get started with this project, follow these steps:
 
 4. **Set up the database:**
    - Ensure your database (PostgreSQL) server is running.
-   - Run migrations or synchronize entities as configured in your project.
+   - Synchronize entities as configured in your project.Since this is a demo project Synchronize option should be used.
 
 ## Database Structure
 
